@@ -16,9 +16,9 @@ return new class extends Migration
             $table->renameColumn('name', 'first_name');
             $table->string('last_name')->after('first_name');
             $table->string('phone')->nullable()->after('email');
-            $table->string('profile_photo')->nulllable()->after('password');
+            $table->string('profile_photo')->nullable()->after('password');
             $table->string('address')->after('profile_photo');
-            $table->boolean('is_active')->default(true)->after('profile_photo');
+            $table->boolean('is_active')->default(true)->after('address');
         });
     }
 
