@@ -81,9 +81,12 @@ class AuthController extends Controller
 
         $token = $user->createToken('api-token')->plainTextToken;
 
+        $pets = Pet::where('owner_id', $user->id)->get();
+
         return response()->json([
             'user'  => $user,
             'token' => $token,
+            'pets' => $pets
         ]);
     }
 
