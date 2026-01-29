@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\MessageController;
+use App\Http\Controllers\Api\PetController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -32,3 +33,7 @@ Route::middleware('auth:sanctum')->group(function () {
 // messages
 Route::get('/messages', [MessageController::class, 'index']);
 Route::post('/messages', [MessageController::class, 'store']);
+
+//pet
+Route::get('/pets', [PetController::class, 'index']);
+Route::post('/pets', [PetController::class, 'store']);
