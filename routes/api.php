@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AppointmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -37,3 +38,8 @@ Route::post('/messages', [MessageController::class, 'store']);
 //pet
 Route::get('/pets', [PetController::class, 'index']);
 Route::post('/pets', [PetController::class, 'store']);
+
+//appointments
+Route::get('/appointments', [AppointmentController::class, 'index']);
+Route::post('/appointments', [AppointmentController::class, 'store']);
+Route::get('/appointments/{id}', [AppointmentController::class, 'getAllAppointments']);
