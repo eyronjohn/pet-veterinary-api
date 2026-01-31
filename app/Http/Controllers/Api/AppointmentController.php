@@ -37,8 +37,8 @@ class AppointmentController extends Controller
         return response()->json([$appointment], 201);
     }
 
-    public function getAllAppointments(Request $id){
-        $appointments = Appointment::whereIn('owner_id', $id)->get();
+    public function getAllAppointments($id){
+        $appointments = Appointment::where('owner_id', $id)->get();
 
         return response()->json([
             'total_found' => $appointments->count(),
