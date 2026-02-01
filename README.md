@@ -35,17 +35,16 @@ The API is intended for learning, portfolio showcase, and as a foundation for a 
 ## Request Validation
 - All incoming requests are validated using Laravel’s built-in validation system.
 
-Invalid requests return structured JSON responses such as:
+#### Invalid requests return structured JSON responses such as:
 
+```json
 {
   "message": "The given data was invalid.",
   "errors": {
     "email": ["The email field is required."]
   }
 }
-
-This makes the API frontend-friendly and predictable.
-
+```
 ## Database
 - Uses MySQL (recommended for production)
 - Foreign key constraints for data integrity
