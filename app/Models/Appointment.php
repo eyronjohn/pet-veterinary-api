@@ -14,4 +14,10 @@ class Appointment extends Model
         'appointment_time',
         'service_type',
     ];
+
+    //belongs to pet
+    public function pet(){
+        return $this->belongsTo(Pet::class);
+    }
+
 }

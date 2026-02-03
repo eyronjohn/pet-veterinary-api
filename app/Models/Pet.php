@@ -16,4 +16,14 @@ class Pet extends Model
         'color',
         'weight'
     ];
+
+    //pet belongs to user/owner
+    public function owner(){
+        return $this->belongsTo(User::class);
+    }
+
+    //pet can have many appointments
+    public function appointments(){
+        return $this->hasMany(Appointment::class);
+    }
 }

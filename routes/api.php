@@ -38,6 +38,7 @@ Route::post('/messages', [MessageController::class, 'store']);
 
 //pet
 Route::get('/pets', [PetController::class, 'index']);
+Route::get('/pets1', [PetController::class, 'index1']);
 Route::post('/pets', [PetController::class, 'store']);
 
 //appointments

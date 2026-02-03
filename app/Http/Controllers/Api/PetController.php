@@ -18,31 +18,14 @@ class PetController extends Controller
         ]);
     }
 
-    // public function store(Request $request){
+    public function index1(){
+        $pets = Pet::with('owner', 'appointments')->get();
 
-    //     $request->validate([
-    //         'owner_id' => 'required|int',
-    //         'name' => 'required|string',
-    //         'species' => 'required|string',
-    //         'breed'  => 'nullable|string',
-    //         'sex' => 'required|string|in:male,female,other',
-    //         'birth_date' => 'required|date',
-    //         'color' => 'required|string',
-    //         'weight' => 'required|numeric'
-    //     ]);
-
-    //     $pet = Pet::create($request->only([
-    //         'owner_id',
-    //         'name',
-    //         'species',
-    //         'breed',
-    //         'sex',
-    //         'birth_date',
-    //         'color',
-    //         'weight'
-    //     ]));
-    //     return response()->json([$pet], 201);
-    // }
+        return response()->json([
+            'status' => 'Success',
+            'data' => $pets
+        ]);
+    }
 
     public function store(Request $request)
     {
